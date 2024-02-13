@@ -3,9 +3,6 @@ BARCOS="2"
 AVIONES="3"
 SALIR="4"
 CCC=1
-carros_list={}
-barcos_list=[]
-aviones_list=[]
 
 def menu():
    print( f"""{CARROS})carros
