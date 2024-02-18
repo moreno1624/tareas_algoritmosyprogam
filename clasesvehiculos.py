@@ -59,7 +59,7 @@ def main():
      else:
          print("ingrese un valor válido")
          continue
-     1
+     
 def Input(Y):
  registro=input("como quiere nombrar el registro: ")
  carac_1=input(f"cual es la marca de su vehiculo:  ")
