@@ -1,4 +1,3 @@
-x=1
 N_añosb=0
 Años_b=[]
 año= int(input("escriba un año entre 1900 y 2199: "))
