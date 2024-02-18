@@ -1,6 +1,6 @@
 año= int(input("escriba un año entre 1900 y 2199: "))
 
-if año<1900 or año>2199:
+if año<1900 and año>2199:
     print(" año no válido ")
     quit()
 else:
