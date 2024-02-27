@@ -1,11 +1,12 @@
 x={}
+aaa=["1","2","3","4","5"]
 CARROS=1
 BARCOS=2
 AVIONES=3
 REGISTROS=4
 SALIR=5
 
-class seller:
+class Seller:
     def __init__( self, nombre):
         self.nombre=nombre
     
@@ -56,7 +57,8 @@ def main():
      menu()
      print("="*35)
      Y= input("elija numero para continuar: ")
-     if Y in "1234":
+     if Y in aaa:
+         
          Y=int(Y)
      else:
          print("ingrese un valor válido")
@@ -66,20 +68,21 @@ def main():
      
       registro=input("como quiere nombrar el registro(no repetir): ")
       print("="*35)
+      seller=input("como se llama el concesionario: ")
       carac_1=input("cual es la marca de su vehiculo:  ")
       carac_2= input("cual es el modelo de su vehiculo:  ")
       
       if Y==CARROS :
           carros_input(registro,carac_1,carac_2)
-          
+          concesionario(seller,registro)
           continue
       elif Y==BARCOS:
           barcos_input(registro,carac_1,carac_2)
-          
+          concesionario(seller,registro)
           continue
       elif Y==AVIONES:
           avion_input(registro,carac_1,carac_2)
-          
+          concesionario(seller,registro)
           continue
      elif Y==REGISTROS:
           registro_input()
@@ -97,7 +100,7 @@ def carros_input(registro,carac_1,carac_2):
  carac_3= input(f"cual es {texto} de su vehiculo:  ")
  print("="*35)
  carrito=car(carac_1,carac_2,carac_3)
- x[registro]=[carrito.marca,carrito.modelo,carrito.color]
+ x[registro]=[f"marca: {carrito.marca},modelo: {carrito.modelo},color: {carrito.color}"]
  return print(carrito)
  
 def barcos_input(registro,carac_1,carac_2):
@@ -106,7 +109,7 @@ def barcos_input(registro,carac_1,carac_2):
  carac_3= input(f"cual es {texto} de su vehiculo:  ")
  print("="*35)
  carrito=barco(carac_1,carac_2,carac_3)
- x[registro]=[carrito.marca,carrito.modelo,carrito.tipo]
+ x[registro]=[f"marca: {carrito.marca},modelo: {carrito.modelo},tipo: {carrito.tipo}"]
  return print(carrito)
 
 def avion_input(registro,carac_1,carac_2):
@@ -115,7 +118,7 @@ def avion_input(registro,carac_1,carac_2):
  carac_3= input(f"cual es {texto} de su vehiculo:  ")
  print("="*35)
  carrito=avion(carac_1,carac_2,carac_3)
- x[registro]=[carrito.marca,carrito.modelo,carrito.capacidad]
+ x[registro]=[f"marca: {carrito.marca},modelo: {carrito.modelo},capacidad: {carrito.capacidad}"]
  return print(carrito)
 
 def registro_input():
@@ -128,5 +131,9 @@ def registro_input():
          print("no se encontró el registro")
     else:
         print("no ha hecho ningun registro")
- 
+def concesionario(seller,registro):
+    concesionario_=Seller(seller)
+    x[registro]+=[f"concesionario : {concesionario_.nombre}"]
+    return print(concesionario_)
+    
 main()
